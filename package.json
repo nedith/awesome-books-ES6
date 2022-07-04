@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/nedith/awesome-books-ES6/issues"
   },
-  "homepage": "https://github.com/nedith/awesome-books-ES6#readme",
-
-  "type": "module"
-
+  "homepage": "https://github.com/nedith/awesome-books-ES6#readme"
 }

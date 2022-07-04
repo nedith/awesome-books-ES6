@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import { getBooks } from './localStorage.js';
 
 export default class BookCollection {

@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars, no-undef, no-return-assign */
+/* eslint-disable import/extensions */
 import { addBook, removeBook } from './modules/localStorage.js';
 import BookCollection from './modules/bookClass.js';
 import { insertDate } from './modules/date.js';

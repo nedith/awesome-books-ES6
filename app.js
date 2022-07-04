@@ -1,94 +1,9 @@
 import { DateTime } from './library/luxon.js';
+import BookCollection from './modules/book.js';
+import getBooks from './modules/getbook.js';
 
-const getBooks = () => {
-  let books;
-  if (localStorage.getItem('bookList') === null) {
-    books = [];
-  } else {
-    books = JSON.parse(localStorage.getItem('bookList'));
-  }
-  return books;
-};
-
-class BookCollection {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-  }
-
-  static bookList = getBooks();
-
-  static bookCard({ title, author, id }) {
-    const cardHolder = document.createElement('div');
-    cardHolder.classList.add('book-card');
-    cardHolder.id = id;
-
-    const displayEl = document.createElement('div');
-    displayEl.textContent = `"${title}" by ${author}`;
-
-    const removeBtn = document.createElement('button');
-    removeBtn.type = 'button';
-    removeBtn.textContent = 'remove';
-    removeBtn.classList.add('remove-btn');
-
-    cardHolder.append(displayEl, removeBtn);
-    return cardHolder;
-  }
-
-  static addBookUI(book) {
-    const bookContainer = document.querySelector('.booksContainer');
-    bookContainer.appendChild(BookCollection.bookCard(book));
-    BookCollection.bookList = [...BookCollection.bookList, book];
-  }
-
-  // Display books in Booklist on page load
-  static bookDisplay() {
-    const bookContainer = document.querySelector('.booksContainer');
-    BookCollection.bookList.forEach((book) => {
-      bookContainer.appendChild(BookCollection.bookCard(book));
-    });
-  }
-
-  // Remove book
-  static removeBook(id) {
-    BookCollection.bookList = BookCollection.bookList.filter(
-      (item) => item.id.toString() !== id,
-    );
-  }
-}
-
-// // from date.js
+// Insert date
 const now = DateTime.now();
-
-// const getDate = () => {
-//   let { month } = now;
-//   let { day } = now;
-//   const { year } = now;
-
-//   if (day < 10) {
-//     day = `0${day}`;
-//   }
-//   if (month < 10) {
-//     month = `0${month}`;
-//   }
-//   return `${day} - ${month} - ${year},`;
-// };
-
-// const getTime = () => {
-//   let { hour } = now;
-//   let minutes = now.minute;
-//   let seconds = now.second;
-//   if (hour < 10) {
-//     hour = `0${hour}`;
-//   }
-//   if (minutes < 10) {
-//     minutes = `0${minutes}`;
-//   }
-//   if (seconds < 10) {
-//     seconds = `0${seconds}`;
-//   }
-//   return `${hour}:${minutes}:${seconds}`;
-// };
 
 const insertDate = () => {
   const navbar = document.querySelector('header');

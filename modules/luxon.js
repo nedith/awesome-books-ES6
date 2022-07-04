@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* eslint-disable no-continue */
 /* eslint-disable prefer-rest-params */
 /* eslint-disable default-case */

@@ -1,3 +1,4 @@
+import { DateTime } from "./library/luxon.js";
 const getBooks = () => {
   let books;
   if (localStorage.getItem('bookList') === null) {
@@ -56,7 +57,7 @@ class BookCollection {
 }
 
 // // from date.js
-// const now = DateTime.now();
+const now = DateTime.now();
 
 // const getDate = () => {
 //   let { month } = now;
@@ -88,15 +89,15 @@ class BookCollection {
 //   return `${hour}:${minutes}:${seconds}`;
 // };
 
-// const insertDate = () => {
-//   const navbar = document.querySelector('header');
+const insertDate = () => {
+  const navbar = document.querySelector('header');
 
-//   const dateEl = document.createElement('div');
-//   dateEl.classList.add('date');
+  const dateEl = document.createElement('div');
+  dateEl.classList.add('date');
 
-//   dateEl.innerHTML = `${getDate()} ${getTime()}`;
-//   navbar.appendChild(dateEl);
-// };
+  dateEl.innerHTML = `${now.toLocaleString(DateTime.DATETIME_MED)}`;
+  navbar.appendChild(dateEl);
+};
 
 // localstorage.js
 
@@ -149,7 +150,7 @@ const clearFormFields = () => {
 };
 
 // index.js
-// insertDate();
+insertDate();
 
 // Display books on page load
 window.addEventListener('DOMContentLoaded', BookCollection.bookDisplay);

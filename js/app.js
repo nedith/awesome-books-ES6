@@ -1,6 +1,6 @@
-import { DateTime } from './library/luxon.js';
-import BookCollection from './modules/book.js';
-import getBooks from './modules/getbook.js';
+import { DateTime } from '../library/luxon.js';
+import BookCollection from '../modules/book.js';
+import getBooks from '../modules/getbook.js';
 
 // Insert date
 const now = DateTime.now();
